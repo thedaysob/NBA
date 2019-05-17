@@ -8,6 +8,7 @@ var PORT = 3000;
 
 app.get('/', async function(req, res) {
 	let scores = await getCurrentGames();
+
     res.send(scores);
 });
 
@@ -41,7 +42,7 @@ function getCurrentGames() {
 		if ((today.getMonth()+1) >= 10) {
 			var month = today.getMonth()+1;
 		} else {
-			var month = '0' + today.getMonth();
+			var month = '0' + (today.getMonth()+1);
 		}
 		if ((today.getDate() >= 10)) {
 			var day = today.getDate();
@@ -49,6 +50,7 @@ function getCurrentGames() {
 			var day = '0' + today.getDate();
 		}
 		var date = today.getFullYear()+''+month+''+day;
+		console.log(date);
 		var request = new XMLHttpRequest();
 		request.open('GET', 'http://data.nba.net/data/10s/prod/v1/'+date+'/scoreboard.json', true);
 		request.send();
@@ -66,16 +68,13 @@ function getCurrentGames() {
 //Gets stats of team that are playing live
 function liveGameTeam(data) {
 	numGames = data.numGames;
-	scores[numGames];
-	score;
+	console.log(numGames);
+	var scores = new Array();
 	index = 0;
-
-	for game in data.games {
-		score.live = game.isGameActivated;
-		score.homeTeam = game.hTeam;
-		score.awayTeam = game.vTeam;
-		scores[index] = score;
-		index++;
+	for (i = 0; i < numGames; i++) {
+		game = data.games[0];
+		score = { "live":game.isGameActivated, "homeTeam":game.hTeam, "awayTeam":game.vTeam };
+		scores.push(score);
 	}
 
 	return scores;
