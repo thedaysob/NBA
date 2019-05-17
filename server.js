@@ -7,8 +7,8 @@ const hostname = '127.0.0.1';
 var PORT = 3000;
 
 app.get('/', async function(req, res) {
-	let data = await getCurrentGames();
-    res.send(data);
+	let scores = await getCurrentGames();
+    res.send(scores);
 });
 
 app.listen(PORT, function() {
@@ -18,7 +18,7 @@ app.listen(PORT, function() {
     console.log('Server is running on PORT:',PORT);
 });
 
-//Gets information of the tea
+//Gets information of the team
 function getPlayers() {
 	return new Promise(resolve=> {
 		var data;
@@ -56,8 +56,27 @@ function getCurrentGames() {
 			if (request.readyState == 4 && request.status == 200) {
 				theData = request.responseText;
 				data = JSON.parse(theData);
-				resolve(data);
+				scores = liveGameTeam(data);
+				resolve(scores);
 			}
 		}
 	})
+}
+
+//Gets stats of team that are playing live
+function liveGameTeam(data) {
+	numGames = data.numGames;
+	scores[numGames];
+	score;
+	index = 0;
+
+	for game in data.games {
+		score.live = game.isGameActivated;
+		score.homeTeam = game.hTeam;
+		score.awayTeam = game.vTeam;
+		scores[index] = score;
+		index++;
+	}
+
+	return scores;
 }
