@@ -1,5 +1,6 @@
 const express = require('express')
 const app = new express()
+const path = require('path')
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 
@@ -78,4 +79,18 @@ function liveGameTeam(data) {
 	}
 
 	return scores;
+}
+
+function displayScores(scores) {
+	for (i = 0; i < scores.length; i++) {
+		homeTeamName = scores[i].homeTeam.triCode;
+		awayTeamName = scores[i].awayTeam.triCode;
+		homeTeamScore = score[i].homeTeam.score;
+		awayTeamScore = score[i].awayTeam.score;
+		if (scores[i].live == true) {
+			
+		} else {
+
+		}
+	}
 }
