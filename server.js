@@ -1,22 +1,23 @@
 const express = require('express')
 const app = new express()
 const path = require('path')
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const cors = require('cors')
+app.use(cors())
 
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 const hostname = '127.0.0.1';
 var PORT = 3000;
 
-app.get('/', async function(req, res) {
-	let scores = await getCurrentGames();
+app.use("/static", express.static(path.resolve(__dirname, 'nbaAPI')));
 
-    res.send(scores);
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.listen(PORT, function() {
 	var today = new Date();
 	var date = today.getFullYear()+''+(today.getMonth()+1)+''+today.getDate();
-	console.log(date);
     console.log('Server is running on PORT:',PORT);
 });
 
@@ -87,10 +88,6 @@ function displayScores(scores) {
 		awayTeamName = scores[i].awayTeam.triCode;
 		homeTeamScore = score[i].homeTeam.score;
 		awayTeamScore = score[i].awayTeam.score;
-		if (scores[i].live == true) {
-			
-		} else {
-
-		}
+		score[i].live;
 	}
 }
