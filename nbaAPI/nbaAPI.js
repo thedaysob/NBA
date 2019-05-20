@@ -1,3 +1,5 @@
+const cors = "https://cors-anywhere.herokuapp.com/";
+
 //Gets information of the team
 function getPlayers() {
 	return new Promise(resolve=> {
@@ -16,6 +18,7 @@ function getPlayers() {
 }
 
 async function scoreBoard() {
+	console.log("new data");
 	let scores = await getCurrentGames();
 	displayScores(scores);
 }
@@ -34,9 +37,8 @@ function getCurrentGames() {
 			var day = '0' + today.getDate();
 		}
 		var date = today.getFullYear()+''+month+''+day;
-		console.log(date);
 		var request = new XMLHttpRequest();
-		request.open('GET', 'http://data.nba.net/data/10s/prod/v1/'+date+'/scoreboard.json', true);
+		request.open('GET', cors + 'http://data.nba.net/data/10s/prod/v1/'+date+'/scoreboard.json', true);
 		request.send();
 		request.onload = function() {
 			if (request.readyState == 4 && request.status == 200) {
@@ -52,12 +54,11 @@ function getCurrentGames() {
 //Gets stats of team that are playing live
 function gameScores(data) {
 	numGames = data.numGames;
-	console.log(numGames);
 	var scores = new Array();
 	index = 0;
 	for (i = 0; i < numGames; i++) {
 		game = data.games[0];
-		score = { "live":game.isGameActivated, "homeTeam":game.hTeam, "awayTeam":game.vTeam };
+		score = { "live":game.isGameActivated, "startTime":game.startTimeEastern, "homeTeam":game.hTeam, "awayTeam":game.vTeam };
 		scores.push(score);
 	}
 
@@ -65,18 +66,21 @@ function gameScores(data) {
 }
 
 function displayScores(scores) {
+	var isLive;
 	for (i = 0; i < scores.length; i++) {
 		homeTeamName = scores[i].homeTeam.triCode;
 		awayTeamName = scores[i].awayTeam.triCode;
-		homeTeamScore = score[i].homeTeam.score;
-		awayTeamScore = score[i].awayTeam.score;
-		score[i].live;
+		if (scores[i].live == true) {
+			homeTeamScore = scores[i].homeTeam.score;
+			awayTeamScore = scores[i].awayTeam.score;
+			isLive = "Game is live";
+		} else {
+			homeTeamScore = 0;
+			awayTeamScore = 0;
+			isLive = "Game starts at " + scores[i].startTime;
+		}
 
-		var para = document.createElement("p");
-		var node = document.createTextNode("Home Team: " + homeTeamName + " " + homeTeamScore + "br /" + 
-			"Away Team" + awayTeam + " " + awayTeamScore + "br /")
-		para.appendChild(node);
-		var element = document.getElementbyId("scoreBoard");
-		element.appendChild(para);
+		document.getElementById("games").innerHTML = ("Status: " + isLive + "<br />" + "Home Team: " + homeTeamName + " " + homeTeamScore + "<br />" + 
+			"Away Team: " + awayTeamName + " " + awayTeamScore + "<br /><br />");
 	}
 }

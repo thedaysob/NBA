@@ -1,0 +1,27 @@
+{
+  "name": "nba",
+  "version": "1.0.0",
+  "description": "NBA Score Board",
+  "main": "server.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedaysob/NBA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thedaysob/NBA/issues"
+  },
+  "homepage": "https://github.com/thedaysob/NBA#readme"
+}
