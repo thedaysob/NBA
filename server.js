@@ -17,6 +17,8 @@ app.use(function(req, res, next) {
 });
 
 app.use("/static", express.static(path.resolve(__dirname, 'nbaAPI')));
+app.use("/static", express.static(path.resolve(__dirname, 'logos')));
+
 
 app.get('/', async function(req, res) {
     await res.sendFile(path.join(__dirname + '/index.html'));
