@@ -8,9 +8,11 @@ const nbaTeams = [
 	{triCode : "CLE", city: "Cleveland", teamName: "Nets"},
 	{triCode : "DAL", city: "Dallas", teamName: "Mavericks"},
 	{triCode : "DEN", city: "Denver", teamName: "Nuggets"},
+	{triCode : "DET", city: "Detroit", teamName: "Pistons"},
 	{triCode : "GSW", city: "Golden State", teamName: "Warriors"},
 	{triCode : "HOU", city: "Houston", teamName: "Rockets"},
 	{triCode : "IND", city: "Indiana", teamName: "Pacers"},
+	{triCode : "LAC", city: "Los Angeles", teamName: "Clippers"},
 	{triCode : "LAL", city: "Los Angeles", teamName: "Lakers"},
 	{triCode : "MEM", city: "Memphis", teamName: "Grizzlies"},
 	{triCode : "MIA", city: "Miami", teamName: "Heat"},
@@ -24,8 +26,10 @@ const nbaTeams = [
 	{triCode : "PHX", city: "Phoneix", teamName: "Suns"},
 	{triCode : "POR", city: "Portland", teamName: "Blazers"},
 	{triCode : "SAC", city: "Sacramento", teamName: "Kings"},
-	{triCode : "SAN", city: "San Antonio", teamName: "Spurs"},
+	{triCode : "SAS", city: "San Antonio", teamName: "Spurs"},
 	{triCode : "TOR", city: "Portland", teamName: "Blazers"},
+	{triCode : "UTA", city: "Utah", teamName: "Jazz"},
+	{triCode : "WAS", city: "Washington", teamName: "Wizards"},
 ]
 
 //Gets information of the team
@@ -120,7 +124,7 @@ function displayScores(scores) {
 			}
 		}
 
-		document.getElementById("games").innerHTML = (isLive + "<br />" + homeTeamName + ": " + homeTeamScore + "<br />" + 
+		document.getElementById("scoreBoard").innerHTML = (isLive + "<br />" + homeTeamName + ": " + homeTeamScore + "<br />" + 
 			awayTeamName + ": " + awayTeamScore + "<br />" + "Game Clock: " + clock + "<br />");
 	}
 }
