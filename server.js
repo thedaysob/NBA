@@ -8,7 +8,7 @@ app.use(cors())
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 const hostname = '127.0.0.1';
-var PORT = 3000;
+const PORT = process.env.PORT || 8888
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
