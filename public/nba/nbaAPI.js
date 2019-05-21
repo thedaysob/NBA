@@ -16,7 +16,7 @@ const nbaTeams = [
 	{triCode : "LAL", city: "Los Angeles", teamName: "Lakers", logo: "http://content.sportslogos.net/logos/6/237/full/uig7aiht8jnpl1szbi57zzlsh.png"},
 	{triCode : "MEM", city: "Memphis", teamName: "Grizzlies", logo: "http://content.sportslogos.net/logos/6/231/full/4373_memphis_grizzlies-primary-2019.png"},
 	{triCode : "MIA", city: "Miami", teamName: "Heat", logo: "http://content.sportslogos.net/logos/6/214/full/burm5gh2wvjti3xhei5h16k8e.gif"},
-	{triCode : "MIL", city: "Milwaukee", teamName: "Bucks", logo: "http://content.sportslogos.net/logos/6/225/full/8275_milwaukee_bucks-primary-2016.png"},
+	{triCode : "MIL", city: "Milwaukee", teamName: "Bucks", logo: "/static/logos/MIL.gif"},
 	{triCode : "MIN", city: "Minnesota", teamName: "Timberwolves", logo: "http://content.sportslogos.net/logos/6/232/full/9669_minnesota_timberwolves-primary-2018.png"},
 	{triCode : "NOP", city: "New Orleans", teamName: "Pelicans", logo: "http://content.sportslogos.net/logos/6/4962/full/2681_new_orleans_pelicans-primary-2014.png"},
 	{triCode : "NYK", city: "New York", teamName: "Knicks", logo: "http://content.sportslogos.net/logos/6/216/full/2nn48xofg0hms8k326cqdmuis.gif"},
