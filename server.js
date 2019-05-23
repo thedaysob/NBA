@@ -5,8 +5,6 @@ const cors = require('cors')
 const fs = require('fs')
 app.use(cors())
 
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-
 const hostname = '127.0.0.1';
 const PORT = process.env.PORT || 8888
 

@@ -6,17 +6,32 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<title>NBA Scores</title>
   <script src="/static/nba/nbaAPI.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body onload="scoreBoard()">
 	<script>setInterval(scoreBoard, 15000)</script>
-	<h1>NBA Game Scores</h1>
-	<div id = 'scoreBoard0'></div>
-	<div id = 'scoreBoard1'></div>
-	<div id = 'scoreBoard2'></div>
-	<div id = 'scoreBoard3'></div>
-	<div id = 'scoreBoard4'></div>
-	<div id = 'scoreBoard5'></div>
-	<div id = 'scoreBoard6'></div>
-	<div id = 'scoreBoard7'></div>
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<h1>NBA Game Scores</h1>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4" id='scoreBoard0'>
+				<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#bscore0">Box Score</button>
+				<div id="bscore0" class="collapse"></div>
+			</div>
+			<div class="col-sm-4" id='scoreBoard1'></div>
+			<div class="col-sm-4" id='scoreBoard2'></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4" id='scoreBoard3'></div>
+			<div class="col-sm-4" id='scoreBoard4'></div>
+			<div class="col-sm-4" id='scoreBoard5'></div>
+		</div>
+	</div>
 </body>
 </html>
