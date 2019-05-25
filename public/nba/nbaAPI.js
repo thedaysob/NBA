@@ -132,16 +132,16 @@ function displayScores(scores) {
 		}
 
 		if (scores[i].live == true || scores[i].status == 3) {
-			document.getElementById("scoreBoard"+i).innerHTML = (isLive + "<br />" + "<img src=" + homeTeamLogo + " style=\"width:72px;height:72px;\">" + " " 
-				+ "<img src=" + awayTeamLogo + " style=\"width:72px;height:72px;\"><br />" + homeTeamName + ": " + homeTeamScore + "<br />" + 
+			document.getElementById("scoreBoard"+i).innerHTML = (isLive + "<br />" + "<img src=" + homeTeamLogo + " style=\"width:100px;height:72px;\">" + " " 
+				+ "<img src=" + awayTeamLogo + " style=\"width:100px;height:72px;\"><br />" + homeTeamName + ": " + homeTeamScore + "<br />" + 
 				awayTeamName + ": " + awayTeamScore + "<br />" + "Quater: " + scores[i].period.current + "<br /> Game Clock: " + clock + "<br />" + 
 				"<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"collapse\" data-target=\"#bscore" + i + "\">Box Score</button><div id=\"bscore" + i + "\" class=\"collapse\">" +
 				"<div class=\"table=responsive\"><table class=\"table table-bordered\"><thead><tr><th>Team Name</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th></tr></thead>" + 
 				"<tbody><tr><td>" + homeTeamName + "</td><td>" + scores[i].homeTeam.linescore[0].score + "</td><td>" + scores[i].homeTeam.linescore[1].score + "</td><td>" + scores[i].homeTeam.linescore[2].score + "</td><td>" + scores[i].homeTeam.linescore[3].score + "</td></tr>" + 
 				"<tr><td>" + awayTeamName + "</td><td>" + scores[i].awayTeam.linescore[0].score + "</td><td>" + scores[i].awayTeam.linescore[1].score + "</td><td>" + scores[i].awayTeam.linescore[2].score + "</td><td>" + scores[i].awayTeam.linescore[3].score + "</td></tr></tbody></table></div>");
 		} else {
-			document.getElementById("scoreBoard"+i).innerHTML = (isLive + "<br />" + "<img src=" + homeTeamLogo + " style=\"width:72px;height:72px;\">" + " " 
-				+ "<img src=" + awayTeamLogo + " style=\"width:72px;height:72px;\"><br />" + homeTeamName + ": " + homeTeamScore + "<br />" + 
+			document.getElementById("scoreBoard"+i).innerHTML = (isLive + "<br />" + "<img src=" + homeTeamLogo + " style=\"width:100px;height:72px;\">" + " " 
+				+ "<img src=" + awayTeamLogo + " style=\"width:100px;height:72px;\"><br />" + homeTeamName + ": " + homeTeamScore + "<br />" + 
 				awayTeamName + ": " + awayTeamScore + "<br />" + "Quater: " + scores[i].period.current + "<br /> Game Clock: " + clock + "<br />" + 
 				"<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"collapse\" data-target=\"#bscore" + i + "\">Box Score</button><div id=\"bscore" + i + "\" class=\"collapse\">" +
 				"<div class=\"table=responsive\"><table class=\"table table-bordered\"><thead><tr><th>Team Name</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th></tr></thead>" + 
