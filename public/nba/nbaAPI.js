@@ -89,7 +89,7 @@ function gameScores(data) {
 	var scores = new Array();
 	index = 0;
 	for (i = 0; i < numGames; i++) {
-		console.log(game.hTeam.linescore[0].score);
+		game = data.games[0];
 		score = { "status": game.statusNum, "live":game.isGameActivated, "startTime":game.startTimeEastern, "homeTeam":game.hTeam, "awayTeam":game.vTeam
 		, "clock":game.clock, "period":game.period };
 		scores.push(score);
