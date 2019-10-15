@@ -51,6 +51,7 @@ function getCurrentGames() {
 			var day = '0' + today.getDate();
 		}
 		var date = today.getFullYear()+''+month+''+day;
+		console.log(date);
 		var request = new XMLHttpRequest();
 		request.open('GET', cors + 'http://data.nba.net/data/10s/prod/v1/'+date+'/scoreboard.json', true);
 		request.send();
@@ -71,7 +72,7 @@ function gameScores(data) {
 	var scores = new Array();
 	index = 0;
 	for (i = 0; i < numGames; i++) {
-		game = data.games[0];
+		game = data.games[i];
 		score = { "status": game.statusNum, "live":game.isGameActivated, "startTime":game.startTimeEastern, "homeTeam":game.hTeam, "awayTeam":game.vTeam
 		, "clock":game.clock, "period":game.period };
 		scores.push(score);
@@ -80,6 +81,7 @@ function gameScores(data) {
 }
 
 function displayScores(scores) {
+	console.log(scores);
 	var isLive;
 	var clock;
 	var numTeams = nbaTeams.length;
